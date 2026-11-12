@@ -14,4 +14,7 @@ else: # ele else va seguido de dos puntos para decir que se hace si no se cumple
 if nacionalidad == "N":
     print("Eres de nacionalidad mexicana")
 else:
-    print("No eres de nacionalidad mexicana")
+    print("No eres de nacionalidad mexicana")         
+
+
+
