@@ -1,15 +1,16 @@
-productos = []
-precios = []
+producto = []
+precio = []
 unidadesExistentes = []
-codigos = []
-descripcionProductos = []
-estadoProductos = []
+codigo = []
+descripcionProducto = []
+estadoProducto = []
+#i = 0 #Esta es la variable de control para el ciclo for (case 2)    
 opcion = 0
 
 while True:
     print("Bienvenido al sistema de inventario de productos")
     print("---------MENU PRINCIPAL---------")
-    print("1. Registrar productos")
+    print("1. Registrar producto")
     print("2. Ver información del inventario")
     print("3. Borrar información del inventario")
     print ("4. Modificar información del inventario")
@@ -20,31 +21,26 @@ while True:
     match opcion:#Aquí inicia el match, que es una validación de caso
     
         case 1:
-            productos.append(input("Ingresa el nombre de los productos: ")
-            precios.append(input("Ingresa los precio del inventario: "))
+            producto.append(input("Ingresa el nombre de el producto: "))
+            precio.append(input("Ingresa el precio del producto: "))
             unidadesExistentes.append(int(input("Ingresa el número de unidades existentes: ")))
-            codigos.append(input("Ingresa el código del producto: "))
-            descripcionProductos.append(input("Ingresa la descripción del producto: "))
-            estadoProductos = input("Ingresa el estado del producto: ")
-            print("Producto registrado con éxito")
+            codigo.append(input("Ingresa el código del producto: "))
+            descripcionProducto.append(input("Ingresa la descripción del producto: "))
+            estadoProducto.append(input("Ingresa el estado del producto: "))
+            print("Producto registrado con éxito, con el ID: " + str(len(producto) -1))
+        
         case 2:
-            print("Nombre:", productos, "Precio:", precios, "Unidades existentes:", unidadesExistentes, "Código:", codigos, "Descripción:", descripcionProductos, "Estado:", estadoProductos)
+            print("Lista de productos registrados:")
+            for i in range(len(producto)):
+                print("Id:-", i," con el nombre", producto[i]," con el precio", precio[i]," con las unidades existentes", unidadesExistentes[i]," con el código", codigo[i]," con la descripción", descripcionProducto[i]," con el estado", estadoProducto[i])
+                #i +=1
+
         case 3:
-            productos = ""
-            precios = ""
-            unidadesExistentes = 0
-            codigos = ""
-            descripcionProductos = ""
-            estadoProductos = ""
-            print("Información del inventario borrada con éxito") 
+            index = int(input("Ingresa el índice del producto a borrar (empezando desde 0): "))
+
         case 4:
-            productos = input("Ingresa el nombre de los productos: ")
-            precios = input("Ingresa los precios del inventario: ")
-            unidadesExistentes = int(input("Ingresa el número de unidades existentes: "))
-            codigos = input("Ingresa el código del producto: ")
-            descripcionProductos = input("Ingresa la descripción del producto: ")
-            estadoProductos = input("Ingresa el estado del producto: ")
-            print("Información del inventario modificada con éxito")
+            print("lista de productos registrados:")
+
         case 5:
             print("Saliendo del sistema...")
             break
